@@ -1,22 +1,10 @@
-/****************************
- * Simple Example 
-*/
-const myHeading = document.getElementById('myHeading');
-const myButton = document.getElementById('myButton');
-const color = document.getElementById('colorVal');
-const fontSize = document.getElementById('fontSize');
-const fontVal = document.getElementById('fontVal');
-const reset = document.getElementById('reset');
+const input = document.querySelector('input');
+const p = document.querySelector('p.description');
+const btn = document.querySelector('button.description');
+const ul = document.querySelector('ul');
 
-myButton.addEventListener('click', () => {
-  myHeading.style.color = color.value;
+btn.addEventListener('click', () => {
+  p.textContent = `${input.value}:`;
 });
 
-fontSize.addEventListener('click', () => {
-  myHeading.style.fontSize = `${fontVal.value}px`;
-});
-
-reset.addEventListener('click', () => {
-  myHeading.style.color = 'initial';
-  myHeading.style.fontSize = 'initial';
-});
+ul.innerHTML = `<li>I'm from JS</li>`;
