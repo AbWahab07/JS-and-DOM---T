@@ -1,22 +1,12 @@
-/****************************
- * Simple Example 
-*/
-const myHeading = document.getElementById('myHeading');
-const myButton = document.getElementById('myButton');
-const color = document.getElementById('colorVal');
-const fontSize = document.getElementById('fontSize');
-const fontVal = document.getElementById('fontVal');
-const reset = document.getElementById('reset');
+const input = document.querySelector('input');
+const p = document.querySelector('p.description');
+const span = document.querySelector('span');
 
-myButton.addEventListener('click', () => {
-  myHeading.style.color = color.value;
-});
+// Dynamically updating input type 
+input.type = 'checkbox';
 
-fontSize.addEventListener('click', () => {
-  myHeading.style.fontSize = `${fontVal.value}px`;
-});
+// Dynamically setting the content of span
+span.innerHTML = `<code>${p.className}</code>`;
 
-reset.addEventListener('click', () => {
-  myHeading.style.color = 'initial';
-  myHeading.style.fontSize = 'initial';
-});
+// Dynamically adding the title to p
+p.title = 'Description of the list';
