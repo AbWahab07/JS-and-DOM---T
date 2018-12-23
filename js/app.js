@@ -1,8 +1,10 @@
 const toggleList = document.querySelector('.toggleList');
 const listDiv = document.querySelector('.listDiv');
-const input = document.querySelector('input');
-const p = document.querySelector('p.description');
-const btn = document.querySelector('button.description');
+const descriptionInput = document.querySelector('input.description');
+const descriptionP = document.querySelector('p.description');
+const descriptionBtn = document.querySelector('button.description');
+const listInput = document.querySelector('.listInput');
+const listAdd = document.querySelector('.listAdd');
 
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == 'none') {
@@ -14,6 +16,15 @@ toggleList.addEventListener('click', () => {
   } 
 });
 
-btn.addEventListener('click', () => {
-  p.textContent = `${input.value}:`;
+descriptionBtn.addEventListener('click', () => {
+  descriptionP.textContent = `${descriptionInput.value}:`;
+  descriptionInput.value = '';
+});
+
+listAdd.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.createElement('li');
+  li.textContent = listInput.value;
+  ul.appendChild(li);
+  listInput.value = '';
 });
