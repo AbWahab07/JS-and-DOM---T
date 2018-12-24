@@ -7,6 +7,16 @@ const listInput = document.querySelector('.listInput');
 const listItems = document.querySelector('.listItems');
 const listAdd = document.querySelector('.listAdd');
 const removeItem = document.querySelector('.removeItem');
+const items = document.getElementsByTagName('li');
+
+for (let i = 0; i < items.length; i++) {
+  items[i].addEventListener('mouseover', () => {
+    items[i].textContent = items[i].textContent.toUpperCase();
+  }); 
+  items[i].addEventListener('mouseout', () => {
+    items[i].textContent = items[i].textContent.toLowerCase();
+  });
+}
 
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == 'none') {
