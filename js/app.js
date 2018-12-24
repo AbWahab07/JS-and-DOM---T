@@ -4,7 +4,9 @@ const descriptionInput = document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionBtn = document.querySelector('button.description');
 const listInput = document.querySelector('.listInput');
+const listItems = document.querySelector('.listItems');
 const listAdd = document.querySelector('.listAdd');
+const removeItem = document.querySelector('.removeItem');
 
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == 'none') {
@@ -22,9 +24,13 @@ descriptionBtn.addEventListener('click', () => {
 });
 
 listAdd.addEventListener('click', () => {
-  let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
   li.textContent = listInput.value;
-  ul.appendChild(li);
+  listItems.appendChild(li);
   listInput.value = '';
+});
+
+removeItem.addEventListener('click', () => {
+  let li = document.querySelector('li:last-child');
+  listItems.removeChild(li);
 });
